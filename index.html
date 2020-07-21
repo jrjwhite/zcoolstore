@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <link rel="stylesheet" href="css/index.css">
+  <!--<script type="text/javascript" src="js/index.js"></script>-->
+</head>
+<body>
+<div id="header">
+  <div class="header_content">
+    <h1 class="logo">
+      <a href="javascript:;"><img src="img/logo.png"></a>
+    </h1>
+    <ul>
+      <li class="active">首页</li>
+      <li>抽象派</li>
+      <li>人物油画</li>
+      <li>绽放</li>
+      <li>植物景观</li>
+    </ul>
+  </div>
+</div>
+<div id="content">
+  <ul class="list" style="top: 0px">
+    <li class="content_1">
+      <img src="img/wenzi.png" alt="">
+    </li>
+    <li class="content_2">
+      <div class="left">
+        <ul>
+          <li>
+            <img src="img/img1.png" alt="">
+            <p>望<br>30*40cm / 40*50cm</p>
+            <a href="javascript"></a>
+          </li>
+          <li>
+            <img src="img/img2.png" alt="">
+            <p>听<br>30*40cm / 40*50cm</p>
+            <a href="javascript"></a>
+          </li>
+          <li>
+            <img src="img/img3.png" alt="">
+            <p>悟<br>30*40cm / 40*50cm</p>
+            <a href="javascript"></a>
+          </li>
+        </ul>
+      </div>
+      <div class="right">
+        <h1>观止</h1>
+        <p>价格：99元起<br>
+          艺术家：吉祥物语</p>
+        <a href="javascript">酷站主页</a>
+      </div>
+      <div class="bg">
+        <img src="img/sc2.png" alt="">
+      </div>
+    </li>
+    <li class="content_3">
+      <div class="left">
+        <ul>
+          <li>
+            <img src="img/img4.png" alt="">
+            <p>Love<br>50*60cm</p>
+            <a href="javascript"></a>
+          </li>
+          <li>
+            <img src="img/img5.png" alt="">
+            <p>Filial and eros aw<br>50*60cm</p>
+            <a href="javascript"></a>
+          </li>
+          <li>
+            <img src="img/img6.png" alt="">
+            <p>Good Time<br>50*60cm</p>
+            <a href="javascript"></a>
+          </li>
+        </ul>
+      </div>
+      <div class="right">
+        <h1>KIDS</h1>
+        <p>价格：249元<br>艺术家：Chow-Lee</p>
+        <a>站酷主页</a>
+      </div>
+      <div class="bg">
+        <img src="img/sc3.png" alt="">
+      </div>
+    </li>
+    <li class="content_4">
+      <div class="left">
+        <ul>
+          <li>
+            <img src="img/img7.png" alt="">
+            <p>绽放2009<br>60*60cm</p>
+            <a href="javascript"></a>
+          </li>
+          <li>
+            <img src="img/img8.png" alt="">
+            <p>绽放2010<br>60*60cm</p>
+            <a href="javascript"></a>
+          </li>
+          <li>
+            <img src="img/img9.png" alt="">
+            <p>绽放2011<br>60*60cm</p>
+            <a href="javascript"></a>
+          </li>
+        </ul>
+      </div>
+      <div class="right">
+        <h1>绽放</h1>
+        <p>价格：269元<br>艺术家：北邦</p>
+        <a>站酷主页</a>
+      </div>
+      <div class="bg">
+        <img src="img/sc4.png" alt="">
+      </div>
+    </li>
+    <li class="content_5">
+      <div class="left">
+        <ul>
+          <li>
+            <img src="img/img10.png" alt="">
+            <p>栖息<br>50*60cm</p>
+            <a href="javascript"></a>
+          </li>
+          <li>
+            <img src="img/img11.png" alt="">
+            <p>惊蛰<br>50*60cm</p>
+            <a href="javascript"></a>
+          </li>
+          <li>
+            <img src="img/img12.png" alt="">
+            <p>恬静<br>50*60cm</p>
+            <a href="javascript"></a>
+          </li>
+        </ul>
+      </div>
+      <div class="right">
+        <h1>沉睡的森林</h1>
+        <p>价格：249元<br>艺术家：赵娜</p>
+        <a>站酷主页</a>
+      </div>
+      <div class="bg">
+        <img src="img/sc5.png" alt="">
+      </div>
+    </li>
+  </ul>
+  <ul class="point">
+    <li class="active"><a href="javascript:;" title="首页"></a></li>
+    <li><a href="javascript:;" title="抽象画"></a></li>
+    <li><a href="javascript:;" title="人物油画"></a></li>
+    <li><a href="javascript:;" title="绽放"></a></li>
+    <li><a href="javascript:;" title="植物景观"></a></li>
+  </ul>
+</div>
+</body>
+<script type="text/javascript">
+    window.onload = function () {
+      var content = document.querySelector('#content')
+      var header = document.querySelector('#header')
+      var hList = document.querySelectorAll('#header > .header_content >  ul > li')
+      var list = document.querySelector('#content > ul')
+      var pList = document.querySelectorAll('#content > .point > li')
+      var now = 0
+      var timer = 0
+      var preIndex = 0
+      //出入场动画
+      var animationAttr = [
+        {
+          inAn:function () {
+            var img = document.querySelector('#content > .list > .content_1 > img')
+            setTimeout(function () {
+              img.style.opacity = 1
+            },1000)
+          },
+          outAn: function () {
+            var img = document.querySelector('#content > .list > .content_1 > img')
+            setTimeout(function () {
+              img.style.opacity = 0
+            },1000)
+          }
+        },
+        {
+          inAn: function () {
+            var cList1 = document.querySelector('#content > .list > .content_2 > .left > ul li:nth-child(1)')
+            var cList2 = document.querySelector('#content > .list > .content_2 > .left > ul li:nth-child(2)')
+            var cList3 = document.querySelector('#content > .list > .content_2 > .left > ul li:nth-child(3)')
+            var right = document.querySelector('#content > .list > .content_2 > .right')
+            setTimeout(function () {
+              cList1.style.transform = "translateY(0px)"
+            },800)
+            setTimeout(function () {
+              cList2.style.transform = "translateY(0px)"
+            },1000)
+            setTimeout(function () {
+              cList3.style.transform = "translateY(0px)"
+              right.style.transform = "translateY(0px)"
+            },1200)
+
+
+          },
+          outAn: function () {
+            var cList1 = document.querySelector('#content > .list > .content_2 > .left > ul li:nth-child(1)')
+            var cList2 = document.querySelector('#content > .list > .content_2 > .left > ul li:nth-child(2)')
+            var cList3 = document.querySelector('#content > .list > .content_2 > .left > ul li:nth-child(3)')
+            var right = document.querySelector('#content > .list > .content_2 > .right')
+            setTimeout(function () {
+              cList1.style.transform = "translateY(600px)"
+            },800)
+            setTimeout(function () {
+              cList2.style.transform = "translateY(600px)"
+            },1000)
+            setTimeout(function () {
+              cList3.style.transform = "translateY(600px)"
+              right.style.transform = "translateY(-300px)"
+            },1200)
+
+          }
+        },
+        {
+          inAn: function () {
+            var li2 = document.querySelector('#content > .list > .content_3 > .left > ul li:nth-child(2)')
+            var li3 = document.querySelector('#content > .list > .content_3 > .left > ul li:nth-child(3)')
+            var right = document.querySelector('#content > .list > .content_3 > .right ')
+            setTimeout(function () {
+              li2.style.transform = "translateX(0px)"
+              li3.style.transform = "translateX(0px)"
+              right.style.transform = "translateX(0px)"
+            },1000)
+          },
+          outAn: function () {
+            var li2 = document.querySelector('#content > .list > .content_3 > .left > ul li:nth-child(2)')
+            var li3 = document.querySelector('#content > .list > .content_3 > .left > ul li:nth-child(3)')
+            var right = document.querySelector('#content > .list > .content_3 > .right ')
+            setTimeout(function () {
+              li2.style.transform = "translateX(-279px)"
+              li3.style.transform = "translateX(-558px)"
+              right.style.transform = "translateX(200px)"
+            },500)
+          }
+        },
+        {
+          inAn: function () {
+            var cList1 = document.querySelector('#content > .list > .content_4 > .left > ul li:nth-child(1)')
+            var cList2 = document.querySelector('#content > .list > .content_4 > .left > ul li:nth-child(2)')
+            var cList3 = document.querySelector('#content > .list > .content_4 > .left > ul li:nth-child(3)')
+            var right = document.querySelector('#content > .list > .content_4 > .right ')
+            cList1.style.display = "initial"
+            cList2.style.display = "initial"
+            cList3.style.display = "initial"
+            cList1.style.animation = "move1 2s 0.8s"
+            cList2.style.animation = "move2 2s 0.8s"
+            cList3.style.animation = "move3 2s 0.8s"
+            setTimeout(function () {
+              cList1.style.transform = "translate(0px,0px)"
+              cList2.style.transform = "translate(0px,0px)"
+              cList3.style.transform = "translate(0px,0px)"
+              right.style.opacity = 1
+            },2000)
+          },
+          outAn: function () {
+            var cList1 = document.querySelector('#content > .list > .content_4 > .left > ul li:nth-child(1)')
+            var cList2 = document.querySelector('#content > .list > .content_4 > .left > ul li:nth-child(2)')
+            var cList3 = document.querySelector('#content > .list > .content_4 > .left > ul li:nth-child(3)')
+            var right = document.querySelector('#content > .list > .content_4 > .right ')
+            cList1.style.display = "none"
+            cList2.style.display = "none"
+            cList3.style.display = "none"
+            cList1.style.transform = "translate(330px,-1000px)"
+            cList2.style.transform = "translate(0px,-1000px)"
+            cList3.style.transform = "translate(-330px,-1000px)"
+            right.style.opacity = 0
+          }
+        },
+        {
+          inAn: function () {
+            var cList1 = document.querySelector('#content > .list > .content_5 > .left > ul li:nth-child(1)')
+            var cList2 = document.querySelector('#content > .list > .content_5 > .left > ul li:nth-child(2)')
+            var cList3 = document.querySelector('#content > .list > .content_5 > .left > ul li:nth-child(3)')
+            var right = document.querySelector('#content > .list > .content_5 > .right ')
+            setTimeout(function () {
+              cList1.style.transform = "translate3d(0px,0px,0px) rotateX(0deg)"
+            },800)
+            setTimeout(function () {
+              cList2.style.transform = "translate3d(0px,0px,0px) rotateX(0deg)"
+            },1000)
+            setTimeout(function () {
+              cList3.style.transform = "translate3d(0px,0px,0px) rotateX(0deg)"
+              right.style.opacity = 1
+            },1200)
+          },
+          outAn: function () {
+            var cList1 = document.querySelector('#content > .list > .content_5 > .left > ul li:nth-child(1)')
+            var cList2 = document.querySelector('#content > .list > .content_5 > .left > ul li:nth-child(2)')
+            var cList3 = document.querySelector('#content > .list > .content_5 > .left > ul li:nth-child(3)')
+            var right = document.querySelector('#content > .list > .content_5 > .right ')
+            setTimeout(function () {
+              cList1.style.transform = "translate3d(-1000px,-800px,-500px) rotateX(145deg)"
+            },800)
+            setTimeout(function () {
+              cList2.style.transform = "translate3d(-1000px,-800px,-500px) rotateX(145deg)"
+            },1000)
+            setTimeout(function () {
+              cList3.style.transform = "translate3d(-1000px,-800px,-500px) rotateX(145deg)"
+              right.style.opacity = 0
+            },1200)
+          }
+        }
+      ]
+      for(var i=1;i<animationAttr.length;i++){
+
+        animationAttr[i]["outAn"]();
+
+      };
+      //头部导航
+      headBind()
+      function headBind() {
+        for(var i = 0;i<hList.length;i++){
+          hList[i].index = i
+          hList[i].onclick = function () {
+            preIndex = now
+             move(this.index)
+            now = this.index
+          }
+        }
+        for(var i = 0;i<pList.length;i++){
+          pList[i].index = i
+          pList[i].onclick = function () {
+            preIndex = now
+            move(this.index)
+            now = this.index
+          }
+        }
+      }
+      //鼠标滑动
+      if(content.addEventListener){
+        content.addEventListener('DOMMouseScroll',function (e) {
+          clearTimeout(timer)
+          timer = setTimeout(function () {
+            fn(e)
+          },200)
+        })
+      }
+      content.onmousewheel=function (e) {
+        clearTimeout(timer)
+         timer = setTimeout(function () {
+           fn(e)
+         },200)
+      }
+      function fn(e){
+       e = e||window.event
+       var dir = ''
+       if(e.wheelDelta){
+         dir = e.wheelDelta > 0 ? "up":"down"
+       }else if(e.detail){
+         dir = e.detail > 0 ? "down":"up"
+       }
+       preIndex = now
+       switch(dir){
+         case "up":
+           if(now > 0){
+             now--
+             move(now)
+           }
+           break
+         case "down":
+           if(now < pList.length -1){
+             now++
+             move(now)
+           }
+           break
+         default:
+           break
+       }
+      }
+      function move(index) {
+        for(var i=0;i<hList.length;i++){
+          hList[i].className = ""
+        }
+        hList[index].className = "active"
+        for(var i=0;i<pList.length;i++){
+          pList[i].className = ''
+        }
+        pList[index].className = 'active'
+        list.style.top = -index * (document.documentElement.clientHeight - header.offsetHeight) + "px"
+        if(animationAttr[index] ){
+          animationAttr[index]['inAn']()
+        }
+        if(animationAttr[preIndex] ){
+          animationAttr[preIndex]['outAn']()
+        }
+      }
+    }
+</script>
+</html>
